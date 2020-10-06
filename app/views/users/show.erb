@@ -1,0 +1,15 @@
+<nav>Menu
+<ul>
+<li>Plants</li>
+</nav>
+
+
+
+<h1>Here are your plants from your home, <%= @user.email %></h1>
+Hi 
+
+<% @user.plants.each do |plant| %>
+  <div>
+    <%= plant.name %>
+  </div>
+<% end %>

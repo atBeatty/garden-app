@@ -14,17 +14,19 @@
 #    binding.pry
 
 5.times do
-    User.create(email: Faker::Internet.email, password: Faker::Verb.past_participle)
+    User.create(first: Faker::Name.first_name, last: Faker::Name.last_name, email: Faker::Internet.email, password: "pass")
 end
 
+
+
 Plant.create(species: 'Abutilon hybridum', name: 'Flowering Maple', light: 1, temperature: 1, humidity: 2, water: 2, soil: 1, user_id: rand(4)+1)
-Plant.create(species: 'Acalypha hispida', name: 'Chenile Plant', light: 1, temperature: 2, humidity: 2, water: 2, soil: 1, user_id: rand(4)+1)
-Plant.create(species: 'Achimenes hybrids', name: 'Magic Flower', light: 2, temperature: 2, humidity: 2, water: 1, soil: 7, user_id: rand(4)+1)
-Plant.create(species: 'Acorus calamus', name: 'Sweet Flag', light: 2.5, temperature: 2, humidity: 2, water: 1, soil: 2, user_id: rand(4)+1)
-Plant.create(species: 'Acorus gramineus', name: 'Miniature Sweet Flag', light: 2.5, temperature: 2, humidity: 2, water: 1, soil: 2, user_id: rand(4)+1)
-Plant.create(species: 'Adiantum raddianum', name: 'Maidenhair Fern', light: 2.5, temperature: 2, humidity: 1, water: 1, soil: 6, user_id: rand(4)+1)
-Plant.create(species: 'Adromischus cristatus', name: 'Crinkle-Leaf Plant', light: 2.5, temperature: 2, humidity: 2, water: 2, soil: 5, user_id: rand(4)+1)
-Plant.create(species: 'Adromischus festivus', name: 'Plover Eggs', light: 2.5, temperature: 2, humidity: 2, water: 2, soil: 5, user_id: rand(4)+1)
+Plant.create(species: 'Acalypha hispida', name: 'Chenile Plant', light: 1, temperature: 2, humidity: 2, water: 2, soil: 1, user_id: 3)
+Plant.create(species: 'Achimenes hybrids', name: 'Magic Flower', light: 2, temperature: 2, humidity: 2, water: 1, soil: 7, user_id: 2)
+Plant.create(species: 'Acorus calamus', name: 'Sweet Flag', light: 2.5, temperature: 2, humidity: 2, water: 1, soil: 2, user_id: 2)
+Plant.create(species: 'Acorus gramineus', name: 'Miniature Sweet Flag', light: 2.5, temperature: 2, humidity: 2, water: 1, soil: 2, user_id: 5)
+Plant.create(species: 'Adiantum raddianum', name: 'Maidenhair Fern', light: 2.5, temperature: 2, humidity: 1, water: 1, soil: 7, user_id: 4)
+Plant.create(species: 'Adromischus cristatus', name: 'Crinkle-Leaf Plant', light: 2.5, temperature: 2, humidity: 2, water: 2, soil: 5, user_id: 1)
+Plant.create(species: 'Adromischus festivus', name: 'Plover Eggs', light: 2.5, temperature: 2, humidity: 2, water: 2, soil: 5, user_id: 1)
 Plant.create(species: 'Aechmea fasciata', name: 'Silver Vase', light: 2.5, temperature: 2, humidity: 2, water: 2, soil: 3, user_id: rand(4)+1)
 Plant.create(species: 'Aechmea miniata ‘Discolor’', name: 'Purplish Coral Berry', light: 2.5, temperature: 2, humidity: 2, water: 2, soil: 3, user_id: rand(4)+1)
 Plant.create(species: 'Aechmea ‘Royal Wine’', name: 'Royal Wine Bromeliad', light: 2.5, temperature: 2, humidity: 2, water: 1, soil: 3, user_id: rand(4)+1)

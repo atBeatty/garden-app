@@ -20,6 +20,9 @@
 
       <footer class="branding">
         <small>&copy; 2020 <strong>GardenApp</strong></small>
+        <% if session[:user_id] %>
+        <small>Current User <strong><%= User.find(session[:user_id]).email %></strong><a href="/logout"> Log Out </a></small>
+        <% end %>
       </footer>
     </div>
 
