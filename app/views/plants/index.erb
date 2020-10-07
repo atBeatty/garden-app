@@ -2,6 +2,8 @@ This is the Plant Index Page After Login.
 
 <ul>
 <% @plants.each do |plant| %>
-    <li><%= plant[:name] %></li><small><%= plant[:user_id] %></small>
+    <% user_name = "#{User.find(plant[:user_id]).first} #{User.find(plant[:user_id]).last}" %>
+
+    <li><%= plant[:name] %></li><small><%= user_name %></small>
 <% end %>
 </ul>
