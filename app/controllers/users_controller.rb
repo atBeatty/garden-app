@@ -1,7 +1,13 @@
 
 
 class UsersController < ApplicationController
-   
+    get '/users/:slug' do
+        @user = User.find_by_slug(params[:email])
+        binding.pry
+        erb :"users/show"
+    end
+
+
     get '/signup' do
         if logged_in?
             redirect "/plants"
@@ -11,7 +17,7 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-       @user = User.new(email: params[:email], password: params[:password])
+       @user = User.new(first: params[:first], last: params[:last], email: params[:email], password: params[:password])
        if @user && @user.save
         session[:user_id] = @user_id
         redirect "/plants"
@@ -41,7 +47,14 @@ class UsersController < ApplicationController
         end
     end
 
-
+    get '/logout' do
+        if logged_in?
+          session.clear
+          redirect to '/login'
+        else
+          redirect to '/'
+        end
+      end
 
 
 

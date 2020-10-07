@@ -37,14 +37,22 @@ class PlantsController < ApplicationController
         end
     end
 
-    get '/logout' do
+    patch '/plants/:id/edit' do
         if logged_in?
-          session.clear
-          redirect to '/login'
+            @plant = Plant.find(params[:id])
+            if @tweet && @tweet.user == current_user
+                erb :"plants/edit"
+            else
+                redirect "/plants"
+            end
         else
-          redirect to '/'
+            redirect "/login"
         end
-      end
+
+    end
+
+
+   
 
 
 
