@@ -1,10 +1,13 @@
 
 <h1>Here are your plants from your home, <%= @user.first %></h1>
 
-
+<ol>
 <% @user.plants.each do |plant| %>
   <div>
-    <%= plant.name %>
+    <li><%= plant.name %></li><a href="/plants/<%= plant.id %>/edit">Edit</a>
+    <li><%= plant.species %></li>
+    <li><%= plant.temperature %></li>
+
   </div>
 <% end %> 
-
+</ol>

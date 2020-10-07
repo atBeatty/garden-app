@@ -13,18 +13,10 @@ class PlantsController < ApplicationController
 
     get '/plants/new' do
         if logged_in?
+            @users = User.all
             erb :"plants/new"
         else
             redirect "/login"
-        end
-    end
-
-    post '/plants' do
-        if logged_in?
-            @plant = Plant.create(params)
-            redirect "/plants/#{@plant.id}"
-        else
-            redirect_if_not_logged_in
         end
     end
 
@@ -37,10 +29,20 @@ class PlantsController < ApplicationController
         end
     end
 
-    patch '/plants/:id/edit' do
+    post '/plants' do
+        plant = Plant.create(params)
+        if @plant.save 
+            redirect "/plants/#{plant.id}"
+        else
+            redirect "/plants/new"
+        end
+    end
+
+    get '/plants/:id/edit' do
         if logged_in?
-            @plant = Plant.find(params[:id])
-            if @tweet && @tweet.user == current_user
+            @users = User.all
+            @plant = Plant.find_by_id(params[:id])
+            if @plant.user.id == current_user.id
                 erb :"plants/edit"
             else
                 redirect "/plants"
@@ -48,14 +50,28 @@ class PlantsController < ApplicationController
         else
             redirect "/login"
         end
-
     end
 
+    patch '/plants/:id' do
+        @plant = Plant.find(params[:id])
+        # params.delete("_method")
+        if @plant.update(params)
+            redirect "/plants"
+        else
+            redirect "/plants"
+        end
+    end
 
-   
-
-
-
-
+    delete '/plants/:id/delete' do
+        if logged_in?
+            @plant = Plant.find_by_id(params[:id])
+            if @plant && @plant.user == current_user
+                @plant.delete
+            end
+            redirect to "/plants"
+        else
+            redirect to "/login"
+        end
+    end
 
 end

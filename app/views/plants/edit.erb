@@ -1,6 +1,6 @@
 
-<form method="POST" action="/plants/<%=@plant.id%>">
+<form method="POST" action="/plants/<%= @plant.id %>">
 <input type="hidden" id="hidden" name="_method" value="PATCH">
-<input type="text" name="content" value="<%=@plant.content%>">
+<input type="text" name="name" value="<%=@plant.name%>">
 <input type="submit" id="submit">
 </form>
