@@ -4,7 +4,6 @@ class PlantsController < ApplicationController
     get '/plants' do 
         # binding.pry
         if logged_in?
-            @plants = Plant.all
             erb :"plants/index"
         else
             redirect "/login"
@@ -30,8 +29,11 @@ class PlantsController < ApplicationController
     end
 
     post '/plants' do
+        #KEEPS STATELESS STATE BY USING local variable
         plant = Plant.create(params)
-        if @plant.save 
+        binding.pry
+        if plant.save
+            plant.update(user_id: current_user.id)
             redirect "/plants/#{plant.id}"
         else
             redirect "/plants/new"
@@ -53,7 +55,7 @@ class PlantsController < ApplicationController
     end
 
     patch '/plants/:id' do
-        @plant = Plant.find(params[:id])
+        @plant = Plant.find_by_id(params[:id])
         # params.delete("_method")
         if @plant.update(params)
             redirect "/plants"

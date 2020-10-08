@@ -1,5 +1,8 @@
 
 <h1>Here are your plants from your home, <%= @user.first %></h1>
+<div>
+<a href="/plants/new">Add Plant</a>
+</div>
 
 <ol>
 <% @user.plants.each do |plant| %>

@@ -1,9 +1,16 @@
 This is the Plant Index Page After Login.
 
-<ul>
-<% @plants.each do |plant| %>
-    <% user_name = "#{User.find(plant[:user_id]).first} #{User.find(plant[:user_id]).last}" %>
 
-    <li><%= plant[:name] %></li><small><%= user_name %></small>
+<% Plant.all.each do |plant| %>
+<div class="plant-post">
+<span class="plant-name"><%= plant.name %></span>
+<span class="plant-species"><%= plant.species %></span>
+<div class="plant-post-specs">
+<span class="plant-water">Water <%= plant.water %></span>
+<span class="plant-light">Light <%= plant.light %></span>
+<span class="plant-temperature">Temperature<%= plant.temperature %></span>
+<span class="plant-humidity">Humidity <%= plant.humidity %></span>
+</div>
+</div>
+
 <% end %>
-</ul>

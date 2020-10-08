@@ -1,0 +1,42 @@
+* {
+   
+    box-sizing: border-box;
+    background-color: rgb(191, 243, 191);
+
+}
+nav, div {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid gray;
+}
+nav a {
+    border: 5px solid black;
+    color: red;
+}
+a {
+    font-family: 'Spectral', serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: black
+}
+
+h1 {
+    font-family: 'Spectral', serif;
+}
+/* This is for the PLANTS/index list of plants and the different spans for each field */
+div.plant-post {
+    display: flex;
+    flex-direction: column;
+}
+div.plant-post-specs {
+    display: flex;
+    justify-content: space-around;
+}
+span.plant-name {
+    font-family: 'Poiret One', sans-serif;
+}
+span.plant-species {
+    font-family: 'Spectral', serif;
+    justify-self: right;
+}
+
