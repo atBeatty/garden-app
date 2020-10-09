@@ -1,5 +1,5 @@
 
-<h1>Here are your plants from your home, <%= @user.first %></h1>
+<h1>Here are your plants from your home, <%= @user.first_name %></h1>
 <div>
 <a href="/plants/new">Add Plant</a>
 </div>
@@ -7,7 +7,7 @@
 <ol>
 <% @user.plants.each do |plant| %>
   <div>
-    <li><%= plant.name %></li><a href="/plants/<%= plant.id %>/edit">Edit</a>
+    <li><%= plant.name %></li><a href="/plants/<%= plant.id %>/edit">Edit</a><a href="/plants/<%= plant.id %>">Delete</a>
     <li><%= plant.species %></li>
     <li><%= plant.temperature %></li>
 

@@ -31,7 +31,6 @@ class PlantsController < ApplicationController
     post '/plants' do
         #KEEPS STATELESS STATE BY USING local variable
         plant = Plant.create(params)
-        binding.pry
         if plant.save
             plant.update(user_id: current_user.id)
             redirect "/plants/#{plant.id}"
@@ -64,7 +63,7 @@ class PlantsController < ApplicationController
         end
     end
 
-    delete '/plants/:id/delete' do
+    delete '/plants/:id' do
         if logged_in?
             @plant = Plant.find_by_id(params[:id])
             if @plant && @plant.user == current_user

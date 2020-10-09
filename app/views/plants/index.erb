@@ -1,16 +1,22 @@
-This is the Plant Index Page After Login.
-
-
 <% Plant.all.each do |plant| %>
-<div class="plant-post">
-<span class="plant-name"><%= plant.name %></span>
-<span class="plant-species"><%= plant.species %></span>
-<div class="plant-post-specs">
-<span class="plant-water">Water <%= plant.water %></span>
-<span class="plant-light">Light <%= plant.light %></span>
-<span class="plant-temperature">Temperature<%= plant.temperature %></span>
-<span class="plant-humidity">Humidity <%= plant.humidity %></span>
-</div>
-</div>
+    <div class="plant-post-wrapper">
+        <div class="plant-post">
+            <div class="plant-post-title">
+                <a class="plant-name" href="/plants/<%= plant.id %>">"<%= plant.name %>"</a>
+                <span class="plant-species"><%= plant.species %></span>
+            </div>
+            
+            <div class="plant-post-specs">
+                <span class="plant-water">Water <%= plant.water %></span>
+                <span class="plant-light">Light <%= plant.light %></span>
+                <span class="plant-temperature">Temperature <%= plant.temperature %></span>
+                <span class="plant-humidity">Humidity <%= plant.humidity %></span>
+            </div>
 
+            <div class="plant-post-owner">
+                <span class="plant-owner">User <%= plant.user.first_name %></span>
+            </div>
+
+        </div>
+    </div>
 <% end %>

@@ -15,9 +15,9 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        @user = User.new(first: params[:first], last: params[:last], email: params[:email], password: params[:password])
+        @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
         if @user && @user.save
-            session[:user_id] = @user_id
+            session[:user_id] = @user.id
             redirect "/plants"
         else
             redirect "/signup"

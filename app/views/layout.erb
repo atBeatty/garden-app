@@ -17,21 +17,21 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
  <body>
-  <nav>
-  <a href="/">Home</a>
-  <a href="/plants">Plants</a>
-  <% if logged_in? %>
-  <a href="/users/<%= current_user.slug %>">My Greenhouse</a>
-  <% end %>
-  <a href="/">About</a>
-  </nav>
+  
 
  
     <div class="wrapper">
-
+    <nav class="main-menu">
+      <a href="/">HOME</a>
+      <a href="/plants">PLANTS</a>
+      <% if logged_in? %>
+      <a href="/users/<%= current_user.slug %>">MY GREENHOUSE</a>
+      <% end %>
+      <a href="/">ABOUT</a>
+    </nav>
         <%= yield %>
 
-      <footer class="branding">
+      <footer>
         <small>&copy; 2020 <strong>GardenApp</strong></small>
         <% if session[:user_id] %>
         <small>Current User <strong><%= User.find(session[:user_id]).email %></strong><a href="/logout"> Log Out </a></small>
@@ -39,7 +39,7 @@
       </footer>
     </div>
 
-    <%# <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
