@@ -11,10 +11,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Spectral:ital,wght@0,200;0,400;0,800;1,200;1,400;1,800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,400;0,800;1,200;1,400;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/reset.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
  <body>
   
@@ -22,12 +23,12 @@
  
     <div class="wrapper">
     <nav class="main-menu">
+      <% if logged_in? %>
       <a href="/">HOME</a>
       <a href="/plants">PLANTS</a>
-      <% if logged_in? %>
       <a href="/users/<%= current_user.slug %>">MY GREENHOUSE</a>
-      <% end %>
       <a href="/">ABOUT</a>
+      <% end %>
     </nav>
         <%= yield %>
 
@@ -40,6 +41,8 @@
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="anime.min.js"></script>
+    <script href="/javascripts/anime.js"></script>
     <!--[if lt IE 7]>
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>

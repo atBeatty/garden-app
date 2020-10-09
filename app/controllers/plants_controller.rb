@@ -43,6 +43,7 @@ class PlantsController < ApplicationController
         if logged_in?
             @users = User.all
             @plant = Plant.find_by_id(params[:id])
+            binding.pry
             if @plant.user.id == current_user.id
                 erb :"plants/edit"
             else
@@ -55,9 +56,9 @@ class PlantsController < ApplicationController
 
     patch '/plants/:id' do
         @plant = Plant.find_by_id(params[:id])
-        # params.delete("_method")
+        params.delete("_method")
         if @plant.update(params)
-            redirect "/plants"
+            redirect "/plants/#{@plant.id}"
         else
             redirect "/plants"
         end
@@ -66,13 +67,14 @@ class PlantsController < ApplicationController
     delete '/plants/:id' do
         if logged_in?
             @plant = Plant.find_by_id(params[:id])
-            if @plant && @plant.user == current_user
+            if @plant.user.id == current_user.id
                 @plant.delete
             end
-            redirect to "/plants"
+            redirect "/plants"
         else
-            redirect to "/login"
+            redirect "/plants"
         end
+
     end
 
 end

@@ -11,21 +11,25 @@ div.wrapper {
     flex-direction: column;
     align-items: center;
 }
+input {
+    border: none;
+    font-size: 16px;
+    font-family: 'Spectral', serif;
+    text-decoration: none;
+    color: red;
+}
+
+
 nav, div, header, footer {
     margin: 5px;
     padding: 5px;
 }
 
 nav.main-menu {
+    height:10vh;
     text-align: center;
     width: 85vw;
     background-color: salmon;
-}
-nav.main-menu a{
-    background-color: salmon;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    color: white;
 }
 a {
     font-size: 16px;
@@ -34,6 +38,13 @@ a {
     color: red;
 }
 
+nav.main-menu a{
+    margin-top: 2vw;
+    background-color: salmon;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    color: white;
+}
 h1 {
     font-family: 'Spectral', serif;
 }
@@ -68,5 +79,15 @@ div.plant-post-owner {
     padding: 1px;
     font-size: x-small;
     align-self: flex-end;
+}
+.plant-owner {
+    color: darkgreen;
+}
+
+/* styling for the My Greenhouse list of plants */
+div.edit-delete {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
 }
 

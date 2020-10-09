@@ -1,16 +1,27 @@
 
-<h1>Here are your plants from your home, <%= @user.first_name %></h1>
+<h1 class="my-garden">Here are your plants from your home, <%= @user.first_name %></h1>
+
 <div>
 <a href="/plants/new">Add Plant</a>
 </div>
-
+<div class="my-garden-wrapper">
 <ol>
 <% @user.plants.each do |plant| %>
-  <div>
-    <li><%= plant.name %></li><a href="/plants/<%= plant.id %>/edit">Edit</a><a href="/plants/<%= plant.id %>">Delete</a>
+  <div class="my-plant">
+    <li><%= plant.name %></li>
     <li><%= plant.species %></li>
     <li><%= plant.temperature %></li>
+    
+    <div class="edit-delete">
+    <a id="edit"href="/plants/<%= plant.id %>/edit">Edit</a>
+    <form method="POST" action="/plants/<%= plant.id %>">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+
+    <input class="submit" type="submit" value="Delete">
+    </form>
+  </div>
 
   </div>
 <% end %> 
 </ol>
+</div>

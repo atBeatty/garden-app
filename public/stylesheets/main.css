@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+
+}
+div {
+    font-family: 'Syne', sans-serif;
+    font-weight: lighter;
+}
+
+
+
+
+div.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    font-family: 'Syne', sans-serif;
+    font-weight: lighter;
+    margin-top: 20vw;
+}
+nav{
+    padding-top: 3vw;
+    margin-bottom: 125px;
+}
+input {
+    margin: 1vw;
+    border: none;
+    background-color: darkseagreen;
+}
+input {
+    margin: 0;
+
+}
+a {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: darkseagreen;
+}
+
+/* MY GREENHOUSE PAGE */
+div.my-garden-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.my-plant {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.edit-delete {
+    display: flex;
+    align-items: center;
+}
+div.edit-delete input {
+    color: white;
+}
+
+
+
+
+
+
