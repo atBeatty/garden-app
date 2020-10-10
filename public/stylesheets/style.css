@@ -85,9 +85,13 @@ div.plant-post-owner {
 }
 
 /* styling for the My Greenhouse list of plants */
+div.plant-post-specs span {
+    display: inline-block;
+}
 div.edit-delete {
     display: flex;
     flex-direction: row;
     font-size: 10px;
 }
+
 
