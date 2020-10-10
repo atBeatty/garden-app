@@ -1,16 +1,21 @@
 
-<h1 class="my-garden">Here are your plants from your home, <%= @user.first_name %></h1>
 
-<div>
+<div class="my-garden-welcome">
+<h1 class="my-garden">Here are your plants from your home, <%= @user.first_name %>.</h1>
+
 <a href="/plants/new">Add Plant</a>
 </div>
 <div class="my-garden-wrapper">
 <ol>
 <% @user.plants.each do |plant| %>
   <div class="my-plant">
-    <li><%= plant.name %></li>
-    <li><%= plant.species %></li>
-    <li><%= plant.temperature %></li>
+    <li><span id="my-plant-name" class="my-plant-label">Name </span>"<%= plant.name %>"</li>
+    <li><span class="my-plant-label">Species </span><%= plant.species %></li>
+    <li><span class="my-plant-label">Water </span><%= plant.water %>/3</li>
+    <li><span class="my-plant-label">Light </span><%= plant.light %>/4</li>
+    <li><span class="my-plant-label">Temperature </span><%= plant.temperature %>/3</li>
+    <li><span class="my-plant-label">Humidity </span><%= plant.humidity %>/3</li>
+    <li><span class="my-plant-label">Soil </span><%= plant.soil %></li>
     
     <div class="edit-delete">
     <a id="edit"href="/plants/<%= plant.id %>/edit">Edit</a>

@@ -1,5 +1,5 @@
-<% Plant.all.each do |plant| %>
-    <div class="plant-post-wrapper">
+<div class="plant-post-wrapper">
+    <% Plant.all.each do |plant| %>
         <div class="plant-post">
             <div class="plant-post-title">
                 <a class="plant-name" href="/plants/<%= plant.id %>">"<%= plant.name %>"</a>
@@ -7,11 +7,11 @@
             </div>
             
             <div class="plant-post-specs">
-                <div><span class="plant-water slider">Water <%= plant.water %></span><div class="slider"></div></div>
-                <div><span class="plant-light slider">Light <%= plant.light %></span><div class="slider"></div></div>
-                <div><span class="plant-temperature slider">Temperature <%= plant.temperature %></span><div class="slider"></div></div>
-                <div><span class="plant-humidity slider">Humidity <%= plant.humidity %></span><div class="slider"></div></div>
-                <div><span class="plant-soil slider">Humidity <%= plant.soil %></span><div class="slider"></div></div>
+                <div><span class="plant-water slider">Water <%= plant.water %>/3</span><div class="slider"></div></div>
+                <div><span class="plant-light slider">Light <%= plant.light %>/4</span><div class="slider"></div></div>
+                <div><span class="plant-temperature slider">Temperature <%= plant.temperature %>/3</span><div class="slider"></div></div>
+                <div><span class="plant-humidity slider">Humidity <%= plant.humidity %>/3</span><div class="slider"></div></div>
+                <div><span class="plant-soil slider">Soil <%= plant.soil %></span><div class="slider"></div></div>
             </div>
 
             <div class="plant-post-owner">
@@ -19,5 +19,5 @@
             </div>
 
         </div>
-    </div>
-<% end %>
+    <% end %>
+</div>

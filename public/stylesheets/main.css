@@ -6,43 +6,52 @@ div {
     font-family: 'Syne', sans-serif;
     font-weight: lighter;
 }
-
-
-
-
 div.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
-
 footer {
     font-family: 'Syne', sans-serif;
     font-weight: lighter;
     margin-top: 20vw;
 }
-nav{
+nav {
     padding-top: 3vw;
     margin-bottom: 125px;
 }
+nav a {
+    margin-left: 20px;
+    margin-right: 20px;
+}
 input {
-    margin: 1vw;
     border: none;
     background-color: darkseagreen;
 }
-input {
-    margin: 0;
-
-}
 a {
-    margin-left: 20px;
-    margin-right: 20px;
     text-decoration: none;
     color: darkseagreen;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* MY GREENHOUSE PAGE */
+ol {
+    padding-top: 30px;
+}
+div.my-plant li:nth-child(1){
+    font-size: 30px;
+    font-weight: 700;
+}
+
+span.my-plant-label {
+    font-size: 12px;
+    font-variant-caps: all-small-caps;
+    color: firebrick;
+    font-weight: 100;
+
+}
 div.my-garden-wrapper {
     display: flex;
     flex-direction: column;
@@ -55,6 +64,8 @@ div.my-plant {
     align-items: center;
 }
 div.edit-delete {
+    margin-top: 20px;
+    border:1px solid darkseagreen;
     display: flex;
     align-items: center;
 }
@@ -65,23 +76,56 @@ div.edit-delete input {
 /* PLANTS INDEX PAGE */
 
 div.plant-post {
-    height: 200px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
+}
+div.plant-post-title {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+div.plant-post-title a{
+    font-size: 30px;
+    font-weight: 700;
+}
+div.plant-post-title span{
+
+    margin-left: 20px;
 }
 div.plant-post-specs {
     align-items: stretch;
     display: flex;
     flex-direction: column;
 }
+div.plant-post-specs div {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
 
 div.slider {
+    margin-top: 5px;
     background-color: forestgreen;
     height: 10px;
     width: 10px;
 }
+div.plant-post-owner {
+    align-self: flex-end;
+    padding-right: 5px;
+    font-size: 12px;
+    font-weight: 100;
+    font-variant-caps: all-small-caps;
+    color: firebrick;
+}
+
+/* ADD NEW PLANT PAGE */
+
+
+
 
 
 

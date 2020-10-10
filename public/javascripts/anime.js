@@ -1,5 +1,5 @@
 anime({
   targets: '.slider',
-  translateX: 250,
+  translateX: 100,
   easing: 'easeInOutExpo'
 });
