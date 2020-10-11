@@ -1,14 +1,14 @@
 
 # Garden-app
 
-Garden-app is a Python library for dealing with word pluralization.
+Garden-app is a Ruby library for storing .
 
 ## Installation
 
 Use the bundle-install prior to using garden-app.
 
 ```bash
-pip install garden-app
+bundle install
 ```
 
 ## Visuals
