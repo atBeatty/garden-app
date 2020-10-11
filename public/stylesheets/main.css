@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-
 }
 div {
     font-family: 'Syne', sans-serif;
@@ -44,13 +43,11 @@ div.my-plant li:nth-child(1){
     font-size: 30px;
     font-weight: 700;
 }
-
 span.my-plant-label {
     font-size: 12px;
     font-variant-caps: all-small-caps;
     color: firebrick;
     font-weight: 100;
-
 }
 div.my-garden-wrapper {
     display: flex;
