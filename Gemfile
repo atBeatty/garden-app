@@ -11,6 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
+gem 'sinatra-flash'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git'
 gem 'env'
 group :test do

@@ -6,12 +6,15 @@ div {
     font-weight: lighter;
 }
 div.wrapper {
+    width: 85vw;
+    margin:auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 footer {
+
     font-family: 'Syne', sans-serif;
     font-weight: lighter;
     margin-top: 20vw;
@@ -73,26 +76,29 @@ div.edit-delete {
     display: flex;
     align-items: center;
 }
-div.edit-delete input {
+div.edit-delete input, input#add-plant {
     color: white;
 }
 
 /* PLANTS INDEX PAGE */
 
 div.plant-post {
-    border:30px solid firebrick;
-    background-color: rgb(236, 247, 216);
+    border:20px solid firebrick;
+    padding-left: 15vw;
+    padding-right: 15vw;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 div.plant-post-title {
     align-self: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 div.plant-post-title a{
@@ -103,11 +109,20 @@ div.plant-post-title span{
 
     margin-left: 20px;
 }
+
 div.plant-post-specs {
-    align-items: stretch;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+div.metrics {
+margin-left: 5vw;    
+margin-right: 3vw;
     display: flex;
     flex-direction: column;
 }
+
 div.plant-post-specs div {
     margin-bottom: 10px;
     font-size: 18px;
@@ -122,12 +137,16 @@ div.slider {
 div.plant-post-owner {
     align-self: flex-end;
     padding-right: 5px;
-    font-size: 14px;
-    font-weight: 200;
-    font-variant-caps: all-small-caps;
-    color: firebrick;
+    
 }
 
+span.plant-owner {
+    font-size: 20px;
+    font-weight: 900;
+    font-variant-caps: all-small-caps;
+    color: firebrick;
+
+}
 /* ADD NEW PLANT PAGE */
 
 

@@ -15,11 +15,12 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
-        if @user && @user.save
-            session[:user_id] = @user.id
+        user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+        if user && user.save
+            session[:user_id] = user.id
             redirect "/plants"
         else
+
             redirect "/signup"
         end
     end
@@ -33,21 +34,21 @@ class UsersController < ApplicationController
     end
 
     post '/login' do
-        @user = User.find_by(email: params[:email])
+        user = User.find_by(email: params[:email])
         
-        if @user && @user.authenticate(params[:password])
-            puts @user.email
-            session[:user_id] = @user.id
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
             redirect "/plants"
         else
-            redirect "signup"
+            flash[:notice] = "Wrong credentials."
+            redirect "/signup"
         end
     end
 
     get '/logout' do
         if logged_in?
           session.clear
-          redirect to '/login'
+          redirect to '/'
         else
           redirect to '/'
         end

@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
  <body>
-  
+  <% flash.keys.each do | type|  %>
+        <div style="color:Red">
+          <%= flash[type] %>
+        </div>
+  <% end %>
 
  
     <div class="wrapper">
