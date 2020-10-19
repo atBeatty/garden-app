@@ -4,12 +4,6 @@ class PlantsController < ApplicationController
     get '/plants' do 
         redirect_if_not_logged_in
         erb :"plants/index"
-        # # binding.pry
-        # if logged_in?
-        #     erb :"plants/index"
-        # else
-        #     redirect "/login"
-        # end
     end
 
     get '/plants/new' do
@@ -45,7 +39,6 @@ class PlantsController < ApplicationController
         if logged_in?
             @users = User.all
             @plant = Plant.find_by_id(params[:id])
-            binding.pry
             if @plant.user.id == current_user.id
                 erb :"plants/edit"
             else
