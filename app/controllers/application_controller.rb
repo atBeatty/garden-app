@@ -41,6 +41,14 @@ class ApplicationController < Sinatra::Base
       end
     end
 
+    def redirect_if_user_can_not_edit
+      if @plant.user.id != current_user.id
+        redirect '/plants'
+      end
+      
+    end
+
+
   end
   
 end
